@@ -1,0 +1,181 @@
+/* Notes Section Specific Styling */
+
+/* Badge Styling */
+.note-badge {
+    background: rgba(5, 150, 105, 0.1);
+    color: #059669;
+    /* Emerald Green */
+    border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+/* Note Card specific layout */
+.resource-card[data-category="note"] {
+    background: #ffffff;
+    border-left: 4px solid #059669;
+}
+
+.note-content-preview {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #f1f5f9;
+}
+
+/* Note Details Styles */
+.note-academic-article {
+    padding: 1rem 0;
+}
+
+.note-academic-article h4 {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.note-academic-article h4::before {
+    content: '';
+    width: 3px;
+    height: 18px;
+    background: #059669;
+    border-radius: 2px;
+}
+
+.note-academic-article p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #475569;
+}
+
+/* Callout Box for Key Concepts */
+.note-callout {
+    background: #ecfdf5;
+    border: 1px solid #10b981;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.note-callout strong {
+    display: block;
+    color: #065f46;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.note-callout p {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #064e3b;
+}
+
+/* Highlighted Text */
+.highlight-note {
+    background: linear-gradient(120deg, #6ee7b7 0%, #6ee7b7 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.3em;
+    background-position: 0 88%;
+    font-weight: 500;
+}
+
+/* Bullet Points */
+.note-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.note-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.note-list li::before {
+    content: '\eb7c';
+    /* Boxicons check */
+    font-family: 'boxicons';
+    position: absolute;
+    left: 0;
+    color: #059669;
+    font-weight: bold;
+}
+
+/* Action Button Overrides */
+.btn-note-action {
+    background: #059669 !important;
+    color: white !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-note-action:hover {
+    background: #047857 !important;
+    box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.2);
+}
+
+/* Focus Reading Layout Overlay on Grid */
+.content-grid.focus-reading {
+    grid-template-columns: 1fr !important;
+    /* Force a single column */
+    max-width: 930px;
+    margin: 0 auto;
+}
+
+/* Full Width Card Styling */
+.resource-card.focused-note {
+    width: 100%;
+    min-height: 400px;
+    padding: 5rem 3.5rem 3.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.resource-card.focused-note .card-details h3 {
+    font-size: 2.25rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 1.5rem;
+    color: #0f172a;
+}
+
+.resource-card.focused-note .note-academic-article p {
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: #334155;
+}
+
+.resource-card.focused-note .note-list li {
+    font-size: 1.15rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Subtle reading mode indicator */
+.reading-mode-badge {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background: #059669;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSC313 Artificial Intelligence Course Portal">
+    <title>CSC313 | Artificial Intelligence</title>
+    <!-- Google Fonts for Academic UI: Lora for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notes.css">
+    <!-- Boxicons for modern icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <!-- Top Navigation Bar simulating a university portal -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class='bx bxs-graduation'></i>
+                <span>Study Portal</span>
+            </div>
+            <div class="nav-course">First Semester 2026</div>
+        </div>
+    </nav>
+
+    <!-- Academic Header Area -->
+    <header class="course-header fade-in">
+        <div class="header-container">
+            <div class="course-badge">CSC313</div>
+            <h1>Artificial Intelligence</h1>
+            <p class="subtitle">A Structured Archive of Lecture Materials CSC313</p>
+            <p class="status">Ongoing Collection (Synchronized with WhatsApp Group Updates)</p>
+            <div class="instructor-info">
+                <i class='bx bx-user-voice'></i>
+                <span>Instructor: <strong>Prof. Hajjah Rashidah</strong></span>
+            </div>
+        </div>
+        <div class="header-bg-accent"></div>
+    </header>
+
+    <main class="container">
+        <!-- Top Section: Double Column Layout -->
+        <div class="hero-grid fade-in delay-1">
+            <!-- Instructions Column -->
+            <section class="instructions-card module-card">
+                <div class="card-header border-blue">
+                    <h2><i class='bx bx-compass'></i> Recommended Learning Path</h2>
+                </div>
+                <div class="instructions-content">
+                    <p class="instruction-intro">For optimal comprehension of the syllabus, please engage with the
+                        materials in this sequence:</p>
+                    <div class="step-list">
+                        <div class="course-step">
+                            <div class="step-icon"><i class='bx bx-file-blank'></i></div>
+                            <div class="step-text">
+                                <strong>1. Foundational Notes</strong>
+                                <span>Review lecture notes and assigned PDFs to establish a conceptual framework.</span>
+                            </div>
+                        </div>
+                        <div class="course-step">
+                            <div class="step-icon"><i class='bx bx-headphone'></i></div>
+                            <div class="step-text">
+                                <strong>2. Academic Lectures</strong>
+                                <span>Listen to the voice notes chronologically (01-33). Concepts are cumulative.</span>
+                            </div>
+                        </div>
+                        <div class="course-step">
+                            <div class="step-icon"><i class='bx bx-play-circle'></i></div>
+                            <div class="step-text">
+                                <strong>3. Visual Depth & PPTs</strong>
+                                <span>Study PPT slides and watch instructional videos for deep technical
+                                    analysis.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured/Stats Column -->
+            <section class="stats-card module-card">
+                <div class="card-header border-purple">
+                    <h2><i class='bx bx-library'></i> Syllabus Overview</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-icon-wrapper audio-bg"><i class='bx bx-headphone stat-icon audio-color'></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">33</span>
+                            <span class="stat-label">Audio Lectures</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon-wrapper video-bg"><i class='bx bx-video stat-icon video-color'></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Video Demos</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon-wrapper doc-bg"><i class='bx bxs-file-pdf stat-icon doc-color'></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Reading Mats</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="progress-wrapper">
+                    <div class="progress-header">
+                        <span class="progress-title">Study Completion</span>
+                        <span class="progress-percentage" id="progress-text">0%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="progress-hint">Progress tracks as you complete audio modules.</p>
+                </div>
+            </section>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Dynamic Category Filters -->
+        <div class="materials-header fade-in delay-2">
+            <h2>Course Resource Library</h2>
+            <nav class="filters">
+                <button class="filter-btn active" data-filter="all">All Resources</button>
+                <button class="filter-btn" data-filter="note"><i class='bx bx-book-open'></i> Notes</button>
+                <button class="filter-btn" data-filter="video"><i class='bx bx-video'></i> Videos</button>
+                <button class="filter-btn" data-filter="audio"><i class='bx bx-headphone'></i> Lectures</button>
+                <button class="filter-btn" data-filter="document" style="display:none;"><i class='bx bx-file'></i>
+                    Documents</button>
+            </nav>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="content-grid fade-in delay-2" id="materials-grid">
+            <!-- Videos and Documents will be injected or grouped here -->
+
+            <!-- Note Segment 1: Intelligent Agents -->
+            <article class="resource-card static-item" data-category="note">
+                <div class="resource-type-badge note-badge">
+                    <i class='bx bx-book-open'></i> Study Note 01
+                </div>
+                <div class="card-details">
+                    <h3>Intelligent Agents & Rationality</h3>
+                    <div class="note-academic-article">
+                        <p>An <span class="highlight-note">AI Agent</span> perceives its environment through sensors and
+                            acts upon it through actuators. It strives to achieve goals by performing actions.</p>
+                        <div class="note-callout">
+                            <strong>Definition of Rationality</strong>
+                            <p>"Acting rationally means doing the right thing, given what the agent knows. The 'right
+                                thing' is the action that is expected to maximize the agent's performance measure."</p>
+                        </div>
+                        <p><strong>Performance Measure:</strong> This is the objective criterion that defines success
+                            for the agent.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Note Segment 2: Types of Agents -->
+            <article class="resource-card static-item" data-category="note">
+                <div class="resource-type-badge note-badge">
+                    <i class='bx bx-brain'></i> Study Note 02
+                </div>
+                <div class="card-details">
+                    <h3>Hierarchy of AI Agents</h3>
+                    <div class="note-academic-article">
+                        <ul class="note-list">
+                            <li><strong>Simple Reflex Agents:</strong> Act based on current perception only (e.g.,
+                                thermostat).</li>
+                            <li><strong>Model-Based Reflex Agents:</strong> Maintain internal state to handle partial
+                                observability.</li>
+                            <li><strong>Goal-Based Agents:</strong> Consider future outcomes to reach a specific goal.
+                            </li>
+                            <li><strong>Utility-Based Agents:</strong> Maximize a "utility" function
+                                (happiness/preference).</li>
+                            <li><strong>Learning Agents:</strong> Improve performance over time from experience.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Note Segment 3: PEAS Framework -->
+            <article class="resource-card static-item" data-category="note">
+                <div class="resource-type-badge note-badge">
+                    <i class='bx bx-globe'></i> Study Note 03
+                </div>
+                <div class="card-details">
+                    <h3>Environments: The PEAS Framework</h3>
+                    <div class="note-academic-article">
+                        <p>To design an agent, we must specify its task environment using PEAS:</p>
+                        <ul class="note-list">
+                            <li><strong>Performance:</strong> Measure of success.</li>
+                            <li><strong>Environment:</strong> The world it operates in.</li>
+                            <li><strong>Actuators:</strong> How it acts on the world.</li>
+                            <li><strong>Sensors:</strong> How it perceives the world.</li>
+                        </ul>
+                        <div class="note-callout">
+                            <strong>Example: Thermostat</strong>
+                            <p>P: Energy efficiency/Comfort; E: Room/Building; A: Heater/AC; S: Temperature sensors.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Note Segment 4: Problem Solving -->
+            <article class="resource-card static-item" data-category="note">
+                <div class="resource-type-badge note-badge">
+                    <i class='bx bx-map-pin'></i> Study Note 04
+                </div>
+                <div class="card-details">
+                    <h3>Problem Formulation & Search</h3>
+                    <div class="note-academic-article">
+                        <p>Before searching, an agent must define the <span class="highlight-note">State Space</span>
+                            (all possible configurations).</p>
+                        <ul class="note-list">
+                            <li><strong>Initial State:</strong> Starting point.</li>
+                            <li><strong>Actions:</strong> Available moves.</li>
+                            <li><strong>Transition Model:</strong> Result of an action.</li>
+                            <li><strong>Goal Test:</strong> Determines if goal is reached.</li>
+                            <li><strong>Path Cost:</strong> Cost of the sequence of actions.</li>
+                        </ul>
+                        <p><em>Example:</em> Navigating from "Angwan Lambu gate" to "Department of Computer Science".
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Note Segment 5: Uninformed Search -->
+            <article class="resource-card static-item" data-category="note">
+                <div class="resource-type-badge note-badge">
+                    <i class='bx bx-search'></i> Study Note 05
+                </div>
+                <div class="card-details">
+                    <h3>Uninformed Search Strategies</h3>
+                    <div class="note-academic-article">
+                        <p>These explore blindly without domain-specific knowledge:</p>
+                        <ul class="note-list">
+                            <li><strong>Breadth-First Search (BFS):</strong> Explores layer by layer. Complete and
+                                Optimal for uniform costs.</li>
+                            <li><strong>Depth-First Search (DFS):</strong> Explores deep before backtracking. Uses a
+                                stack. Not always complete.</li>
+                            <li><strong>Uniform Cost Search (UCS):</strong> Expands lowest path cost first. Optimal.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Note Segment 6: Informed Search -->
+            <article class="resource-card static-item" data-category="note">
+                <div class="resource-type-badge note-badge">
+                    <i class='bx bx-bolt-circle'></i> Study Note 06
+                </div>
+                <div class="card-details">
+                    <h3>Informed Search & A* Algorithm</h3>
+                    <div class="note-academic-article">
+                        <p>Informed search uses <span class="highlight-note">Heuristics (h(n))</span> to estimate
+                            distance to the goal.</p>
+                        <ul class="note-list">
+                            <li><strong>Greedy Best-First:</strong> Explores node closest to goal. Can get stuck.</li>
+                            <li><strong>A* Search:</strong> Combines actual cost (g) and estimated cost (h). f(n) = g(n)
+                                + h(n).</li>
+                        </ul>
+                        <div class="note-callout">
+                            <strong>A* Optimal Property</strong>
+                            <p>A* is both complete and optimal if the heuristic is admissible (never overestimates).</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Documents Area Placeholder (hidden until populated) -->
+            <article class="resource-card static-item empty-state-card" data-category="document" style="display:none;">
+                <div class="card-details">
+                    <!-- <div class="empty-state-content">
+                        <i class='bx bx-info-circle'></i>
+                        <p>nothing here yet</p>
+                    </div> -->
+                </div>
+            </article>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-container fade-in delay-2" id="pagination" style="display: none;">
+            <button class="page-btn" id="prev-btn" disabled><i class='bx bx-chevron-left'></i> <span
+                    class="btn-text">Previous</span></button>
+            <div class="page-numbers" id="page-numbers">
+                <!-- Page numbers generated by JS -->
+            </div>
+            <button class="page-btn" id="next-btn"><span class="btn-text">Next</span> <i
+                    class='bx bx-chevron-right'></i></button>
+        </div>
+
+    </main>
+
+    <footer class="course-footer">
+        <p>Department of Computer Science • Course Repository</p>
+        <div class="developer-credit">
+            Developed by <strong>Joseph Jonah</strong>
+            <a href="https://www.linkedin.com/in/inalegwu-joseph-jonah/" target="_blank" class="linkedin-link">
+                <i class='bx bxl-linkedin-square'></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
