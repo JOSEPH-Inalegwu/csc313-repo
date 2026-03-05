@@ -2,7 +2,7 @@
 
 > **A structured, distraction-free environment for mastering AI foundations.**
 
-![Course Header](file://C:/Users/HP/.gemini/antigravity/brain/7269f970-eaf6-433d-93bc-e3f0f64b87a9/header_verification_1772656991358.png)
+![Course Header](assets/images/web_header.png)
 
 ## 🎯 The "Why": Solving the WhatsApp Learning Gap
 
@@ -23,22 +23,23 @@ This portal transforms a chaotic stream of messages into an **Academic Learning 
 ### 1. Structured Knowledge Repository
 Instead of scrolling through 200 messages, students can filter resources by type: **Notes, Videos, Lectures, or Documents**. Every piece of content is where it belongs.
 
-![Resource Library](file://C:/Users/HP/.gemini/antigravity/brain/7269f970-eaf6-433d-93bc-e3f0f64b87a9/all_resources_view_1772653250845.png)
+![Resource Library](assets/images/web_video_resources.png)
 
 ### 2. Focused Reading Mode
 When you select "Notes," the UI shifts into a **high-readability mode**. Side distractions are removed, padding is optimized, and typography is adjusted to ensure you can digest complex AI theories like the PEAS framework or A* Search without eye strain.
-
-![Focused Reading](file://C:/Users/HP/.gemini/antigravity/brain/7269f970-eaf6-433d-93bc-e3f0f64b87a9/notes_filter_view_1772653371096.png)
 
 ### 3. Advanced Audio Lectures
 Our custom audio player isn't just a "play" button. It includes:
 *   **Playback Speed Control**: Listen at 1.5x or 2x to review familiar concepts quickly.
 *   **Volume Booster**: Built with the **Web Audio API**, it allows users to boost lecture audio beyond 100%—essential for recordings made in large lecture halls with low gain.
+*   **Progress Tracking**: A completion tick is stamped on every lecture you finish, and your overall study progress is saved automatically.
+
+![Audio Lectures](assets/images/web_audio_resources.png)
 
 ### 4. Zero-Friction Mobile Experience
 Learning happens everywhere. The portal is fully responsive, featuring a custom-built **dynamic pagination system** that adapts to small screens by hiding labels and optimizing touch targets.
 
-![Mobile View](file://C:/Users/HP/.gemini/antigravity/brain/7269f970-eaf6-433d-93bc-e3f0f64b87a9/pagination_area_1772655854742.png)
+![Mobile View](assets/images/web_mobile_responsive.png)
 
 ---
 
@@ -47,6 +48,7 @@ Learning happens everywhere. The portal is fully responsive, featuring a custom-
 *   **HTML5 & CSS3**: Custom academic-themed design system using CSS Variables and Flexbox/Grid.
 *   **Vanilla JavaScript**: High-performance DOM manipulation for filtering and pagination without heavy frameworks.
 *   **Web Audio API**: For advanced real-time gain control in the audio player.
+*   **localStorage**: Persists study progress and listened-state across sessions — no login required.
 *   **Boxicons**: For a sharp, modern academic icon library.
 *   **Google Fonts**: Lora (for serif academic headings) and Inter (for high-legibility body text).
 
@@ -65,6 +67,4 @@ Learning happens everywhere. The portal is fully responsive, featuring a custom-
 **Joseph Jonah**  
 Product-Focused Developer passionate about creating tools that bridge the gap between technology and education.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Joseph%20Jonah-blue?logo=linkedin)](https://www.linkedin.com/in/joseph-jonah-2b4b3b2b4/)
-
-![Footer Credit](file://C:/Users/HP/.gemini/antigravity/brain/7269f970-eaf6-433d-93bc-e3f0f64b87a9/footer_verification_1772657609996.png)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Joseph%20Jonah-blue?logo=linkedin)](https://www.linkedin.com/in/inalegwu-joseph-jonah/)
