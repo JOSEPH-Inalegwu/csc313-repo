@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
-        `;
+
         videoCards.push(article);
     });
 
