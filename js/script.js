@@ -327,6 +327,16 @@ document.addEventListener('DOMContentLoaded', () => {
             currentFilter = btn.getAttribute('data-filter');
             currentPage = 1;
             renderContent();
+
+            // Track filter clicks with Vercel Analytics
+            if (window.va) {
+                window.va('event', {
+                    name: 'filter_click',
+                    properties: {
+                        filter: currentFilter
+                    }
+                });
+            }
         });
     });
 
