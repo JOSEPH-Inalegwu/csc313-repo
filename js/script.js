@@ -163,6 +163,19 @@ document.addEventListener('DOMContentLoaded', () => {
             audioEl.playbackRate = parseFloat(e.target.value);
         });
 
+        // ── Track audio play to reduce bounce rate ──────────────────────────────
+        audioEl.addEventListener('play', () => {
+            if (window.va) {
+                window.va('event', {
+                    name: 'audio_play',
+                    properties: {
+                        lecture: `Segment ${num}`,
+                        lectureIndex: index
+                    }
+                });
+            }
+        });
+
         // ── Mark as listened when audio finishes ──────────────────────────────
         audioEl.addEventListener('ended', () => {
             if (!listenedSet.has(index)) {
@@ -171,6 +184,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateProgressBar();
             }
             addTickToCard(article); // also safe if already ticked
+
+            // Track completed audio
+            if (window.va) {
+                window.va('event', {
+                    name: 'audio_completed',
+                    properties: {
+                        lecture: `Segment ${num}`,
+                        lectureIndex: index
+                    }
+                });
+            }
         });
         // ──────────────────────────────────────────────────────────────────────
 
@@ -194,10 +218,25 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="card-details">
                 <h3>${video.title}</h3>
                 <p class="meta-info"><i class='bx bx-time-five'></i> MP4 Video • Educational Content</p>
-                <a href="materials/video/${video.name}" class="btn-action" target="_blank">
+                <a href="materials/video/${video.name}" class="btn-action video-watch-link" target="_blank">
                     <i class='bx bx-play-circle'></i> Watch Video
                 </a>
-            </div>
+            </div>`;
+
+        // Track video watch clicks
+        article.addEventListener('click', (e) => {
+            if (e.target.closest('.video-watch-link') || e.target.closest('.resource-image')) {
+                if (window.va) {
+                    window.va('event', {
+                        name: 'video_watch',
+                        properties: {
+                            videoTitle: video.title,
+                            videoName: video.name
+                        }
+                    });
+                }
+            }
+        });
         `;
         videoCards.push(article);
     });
@@ -301,9 +340,24 @@ document.addEventListener('DOMContentLoaded', () => {
         nextBtn.disabled = currentPage === totalPages;
     }
 
-    // Pagination listeners
+    // Pagination listeners with engagement tracking
     prevBtn.addEventListener('click', () => {
-        if (currentPage > 1) { currentPage--; renderContent(); }
+        if (currentPage > 1) {
+            currentPage--;
+            renderContent();
+
+            // Track pagination navigation
+            if (window.va) {
+                window.va('event', {
+                    name: 'pagination_click',
+                    properties: {
+                        direction: 'previous',
+                        currentPage: currentPage,
+                        filter: currentFilter
+                    }
+                });
+            }
+        }
     });
 
     nextBtn.addEventListener('click', () => {
@@ -316,7 +370,22 @@ document.addEventListener('DOMContentLoaded', () => {
             totalItems = staticCards.filter(c => c.getAttribute('data-category') === currentFilter).length;
         }
         const totalPages = Math.ceil(totalItems / itemsPerPage);
-        if (currentPage < totalPages) { currentPage++; renderContent(); }
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderContent();
+
+            // Track pagination navigation
+            if (window.va) {
+                window.va('event', {
+                    name: 'pagination_click',
+                    properties: {
+                        direction: 'next',
+                        currentPage: currentPage,
+                        filter: currentFilter
+                    }
+                });
+            }
+        }
     });
 
     // Filter listeners
