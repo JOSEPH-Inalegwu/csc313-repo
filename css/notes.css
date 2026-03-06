@@ -22,7 +22,7 @@
     padding: 1rem;
     background: #f8fafc;
     border-radius: 6px;
-    border: 1px solid #f1f5f9;
+    border: 1px solid #f9f5f1;
 }
 
 /* Note Details Styles */
@@ -178,4 +178,56 @@
     align-items: center;
     gap: 8px;
     z-index: 10;
+}
+
+/* Mobile responsive adjustments for focused note */
+@media (max-width: 768px) {
+    .resource-card.focused-note {
+        padding: 3rem 1.5rem 2rem;
+    }
+
+    .resource-card.focused-note .card-details h3 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .resource-card.focused-note .note-academic-article p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .resource-card.focused-note .note-list li {
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .reading-mode-badge {
+        top: 12px;
+        right: 16px;
+        padding: 4px 12px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .resource-card.focused-note {
+        padding: 2rem 1rem 1.5rem;
+    }
+
+    .resource-card.focused-note .card-details h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .resource-card.focused-note .note-academic-article p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .resource-card.focused-note .note-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
 }

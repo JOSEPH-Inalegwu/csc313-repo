@@ -57,10 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Stamp a "Listened" tick badge on an audio card (idempotent)
     function addTickToCard(card) {
         if (card.querySelector('.listened-tick')) return;
-        const tick = document.createElement('div');
+        const durationEl = card.querySelector('.audio-duration');
+        if (!durationEl) return;
+        const tick = document.createElement('span');
         tick.className = 'listened-tick';
-        tick.innerHTML = "<i class='bx bx-check-circle'></i> Listened";
-        card.appendChild(tick);
+        tick.innerHTML = "<i class='bx bx-check-circle'></i>";
+        tick.title = 'Listened';
+        durationEl.parentElement.insertBefore(tick, durationEl.nextSibling);
     }
 
     // Re-apply ticks to any audio cards currently in the DOM

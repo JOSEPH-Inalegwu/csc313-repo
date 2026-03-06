@@ -491,26 +491,17 @@ h3,
 
 /* Listened tick badge on audio cards */
 .listened-tick {
-    position: absolute;
-    top: 0.55rem;
-    right: 0.55rem;
-    background: #059669;
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 20px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 4px;
-    letter-spacing: 0.3px;
-    z-index: 5;
-    box-shadow: 0 2px 6px rgba(5, 150, 105, 0.35);
-    pointer-events: none;
+    justify-content: center;
+    color: #059669;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    padding: 0 0.25rem;
 }
 
 .listened-tick i {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .resource-image {
